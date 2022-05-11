@@ -150,16 +150,18 @@
 <li><strong>Feature-rich</strong>: <code>enum</code>s with values, platform-optimized <code>Vec</code>, possibly recursive <code>struct</code>, zero-copy big arrays, <code>Stream</code> (iterator) abstraction, error (<code>Result</code>) handling, cancellable tasks, concurrency control, and more. See full features <a href="https://fzyzcjy.github.io/flutter_rust_bridge/feature.html">here</a>. </li>
 <li><strong>Async programming</strong>: Rust code will never block the Flutter. Call Rust naturally from Flutter's main isolate (thread).</li>
 <li><strong>Lightweight</strong>: This is not a huge framework that includes everything, so you are free to use your favorite Flutter and Rust libraries. <sub>For example, state-management with Flutter library (e.g. MobX) can be elegant and simple (contrary to implementing in Rust); implementing a photo manipulation algorithm in Rust will be fast and safe (countrary to implementing in Flutter).</sub></li>
-<li><strong>Multi-platform</strong>: Android, iOS, Windows, Linux, MacOS (<a href="https://github.com/fzyzcjy/flutter_rust_bridge/issues/315">Web</a> coming soon)</li>
+<li><strong>Cross-platform</strong>: Android, iOS, Windows, Linux, MacOS (<a href="https://github.com/fzyzcjy/flutter_rust_bridge/issues/315">Web</a> coming soon)</li>
 <li><strong>Easy to code-review &amp; convince yourself</strong>: This package simply simulates how humans  write boilerplate code. If you want to convince yourself (or your team) that it is safe, there is not much code to look at. No magic at all! (<a href="https://fzyzcjy.github.io/flutter_rust_bridge/safety.html">More about</a> safety concerns.)</li>
 <li><strong>Fast</strong>: It is only a thin (though feature-rich) wrapper, without overhead such as protobuf serialization, thus performant. (More <a href="https://github.com/fzyzcjy/flutter_rust_bridge/issues/318#issuecomment-1034536815">benchmarks</a> later) <small>(Throw away components like thread-pool to make it even faster)</small></li>
 <li><strong>Pure-Dart compatible:</strong> Despite the name, this package is 100% compatible with <a href="https://github.com/fzyzcjy/flutter_rust_bridge/blob/master/frb_example/pure_dart/README.md">pure</a> Dart.</li>
 </ul>
 <h2 id="-user-guide"><a class="header" href="#-user-guide">💡 User Guide</a></h2>
 <p>Check out <a href="https://fzyzcjy.github.io/flutter_rust_bridge/">the user guide</a> for <a href="https://fzyzcjy.github.io/flutter_rust_bridge/quickstart.html">show-me-the-code</a>, <a href="https://fzyzcjy.github.io/flutter_rust_bridge/tutorial_with_flutter.html">tutorials</a>, <a href="https://fzyzcjy.github.io/flutter_rust_bridge/feature.html">features</a> and much more.</p>
+<h2 id="-ps-convenient-flutter-tests"><a class="header" href="#-ps-convenient-flutter-tests">📎 P.S. Convenient Flutter tests</a></h2>
+<p>If you want to write and debug tests in Flutter conveniently, with action history, time travelling, screenshots, rapid re-execution, video recordings, interactive mode and more, here is my another open-source library: https://github.com/fzyzcjy/flutter_convenient_test.</p>
 <h2 id="-contributors"><a class="header" href="#-contributors">✨ Contributors</a></h2>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<p><a href="index.html#contributors-"><img src="https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square" alt="All Contributors" /></a></p>
+<p><a href="index.html#contributors-"><img src="https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square" alt="All Contributors" /></a></p>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a> following <a href="https://github.com/all-contributors/all-contributors">all-contributors</a> specification):</p>
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -184,6 +186,10 @@
     <td align="center"><a href="https://github.com/Unoqwy"><img src="https://avatars.githubusercontent.com/u/65187632?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Unoqwy</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_rust_bridge/commits?author=Unoqwy" title="Code">💻</a></td>
     <td align="center"><a href="https://feber.dev"><img src="https://avatars.githubusercontent.com/u/1727318?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Febrian Setianto</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_rust_bridge/commits?author=feber" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Syndim"><img src="https://avatars.githubusercontent.com/u/835035?v=4?s=100" width="100px;" alt=""/><br /><sub><b>syndim</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_rust_bridge/commits?author=syndim" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/sagudev"><img src="https://avatars.githubusercontent.com/u/16504129?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sagu</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_rust_bridge/commits?author=sagudev" title="Code">💻</a> <a href="https://github.com/fzyzcjy/flutter_rust_bridge/commits?author=sagudev" title="Documentation">📖</a></td>
+  </tr>
 </table>
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -194,13 +200,15 @@
 <li><a href="https://github.com/SecondFlight">SecondFlight</a>: Allow structs and enums to be imported from other files within the crate by creating source graph. Auto-create relavent dir.</li>
 <li><a href="https://github.com/Unoqwy">Unoqwy</a>: Add struct mirrors, such that types in the external crates can be imported and used without redefining and copying.</li>
 <li><a href="https://github.com/antonok-edm">antonok-edm</a>: Avoid converting syn types to strings before parsing to improve code and be more robust.</li>
-<li><a href="https://github.com/AlienKevin">AlienKevin</a>: Add flutter example for macOS.</li>
-<li><a href="https://github.com/surban">surban</a>: Support unit return type.</li>
+<li><a href="https://github.com/sagudev">sagudev</a>: Make code generator a <code>lib</code>. Add error types. Depend on <code>cbindgen</code>. Fix LLVM paths. Update deps.</li>
+<li><a href="https://github.com/AlienKevin">AlienKevin</a>: Add flutter example for macOS. Add doc for Android NDK bug.</li>
+<li><a href="https://github.com/surban">surban</a>: Support unit return type. Skip unresolvable modules. Ignore prefer_const_constructors.</li>
+<li><a href="https://github.com/trobanga">trobanga</a>: Add support for <code>[T;N]</code>. Add <code>usize</code> support. Add a cmd argument.</li>
 <li><a href="https://github.com/efc-mw">efc-mw</a>: Improve Windows encoding handling.</li>
 <li><a href="https://github.com/valeth">valeth</a>: Rename callFfi's port.</li>
-<li><a href="https://github.com/trobanga">trobanga</a>: Add a cmd argument.</li>
 <li><a href="https://github.com/Michael-F-Bryan">Michael-F-Bryan</a>: Detect broken bindings.</li>
 <li><a href="https://github.com/bus710">bus710</a>: Add a case in troubleshooting.</li>
+<li><a href="https://github.com/Syndim">Syndim</a>: Add a bracket to box.</li>
 <li><a href="https://github.com/feber">feber</a>: Fix doc link.</li>
 <li><a href="https://github.com/rustui">rustui</a>: Fix a typo.</li>
 </ul>
@@ -237,7 +245,6 @@ pub enum DrawMode { Colorful {palette: String}, Grayscale }
 <p>This step is optional, since I have generated the source code already (in quickstart). Even if you do it, you should not see anything changed.</p>
 <p>Firstly, you may need to install dependencies of this library:</p>
 <ul>
-<li>Install <code>cbindgen</code>: <code>cargo install cbindgen</code> <sub>(may <a href="https://github.com/fzyzcjy/flutter_rust_bridge/issues/53#issuecomment-939588321">need latest version</a>, thanks @gmorenz)</sub></li>
 <li>Install <code>ffigen</code>:  <code>dart pub global activate ffigen</code>, and <a href="https://pub.dev/packages/ffigen#installing-llvm">install LLVM</a> which is required by <code>ffigen</code>.</li>
 <li>Install the codegen program: <code>cargo install flutter_rust_bridge_codegen</code>.</li>
 </ul>
@@ -714,10 +721,51 @@ languages to be run on the JVM via the <a href="https://docs.oracle.com/javase/7
 </code></pre>
 <p>or edit one of the <code>gradle.properties</code> that resides within the <code>android</code> folder.</p>
 <h2 id="cargo-ndk"><a class="header" href="#cargo-ndk"><a href="https://github.com/bbqsrc/cargo-ndk">cargo-ndk</a></a></h2>
-<pre><code class="language-shell">cargo install cargo-ndk
+<pre><code class="language-shell">cargo install cargo-ndk --version 2.6.0
 </code></pre>
 <p><a href="https://github.com/bbqsrc/cargo-ndk">cargo-ndk</a> is a Cargo plugin for compiling code suitable for plugging into
-the JNI without additional configuration. Run the above command to install.</p>
+the JNI without additional configuration. Run the above command to install.
+Version 2.7.0 of cargo-ndk introduced changes that breaked support for NDK
+version 22 so 2.6.0 must be used for now.</p>
+<h2 id="alternative-ndk-setup"><a class="header" href="#alternative-ndk-setup">Alternative NDK setup</a></h2>
+<p>You can alternatively use the latest version of the Android NDK which is greater than 22.
+However, this requires a hack to prevent the <a href="https://github.com/bbqsrc/cargo-ndk/issues/22">unable to find library -lgcc error</a>.</p>
+<h3 id="android-ndk-1"><a class="header" href="#android-ndk-1">Android NDK</a></h3>
+<p>Install the latest NDK:</p>
+<blockquote>
+<p>Android Studio &gt; SDK Manager &gt; SDK Tools &gt; NDK (Side by side)</p>
+</blockquote>
+<p>Click on OK at the bottom right corner to start the installation.</p>
+<h3 id="cargo-ndk-1"><a class="header" href="#cargo-ndk-1"><a href="https://github.com/bbqsrc/cargo-ndk">cargo-ndk</a></a></h3>
+<p>You should install <code>cargo-ndk</code> version 2.7.0 or above which works for
+Android NDK versions greater than 22.</p>
+<pre><code>cargo install cargo-ndk --version ^2.7.0
+</code></pre>
+<p>A workaround may be under development in the cargo-ndk project. Until it is finished,
+you need to manually create four text files to redirect calls from libgcc to libunwind (<a href="https://github.com/rust-lang/rust/pull/85806#issuecomment-1096266946">reference</a>):</p>
+<ol>
+<li>
+<p>Find out all the 4 folders containing file <code>libunwind.a</code>.</p>
+<ul>
+<li>
+<p>On Windows, it is similar to:</p>
+<pre><code>C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\24.0.8215888\toolchains\llvm\prebuilt\windows-x86_64\lib64\clang\14.0.1\lib\linux\x86_64\
+</code></pre>
+</li>
+<li>
+<p>On macOS Monterey, it is similar to:</p>
+<pre><code>~/Library/Android/sdk/ndk/24.0.8215888/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/14.0.1/lib/linux/x86_64/
+</code></pre>
+</li>
+</ul>
+<p>The three other folders end with <code>aarch64</code>, <code>arm</code>,    <code>i386</code> instead of <code>x86_64</code>.</p>
+</li>
+<li>
+<p>Create 4 text files named <code>libgcc.a</code> in the four folders mentioned above with this contents</p>
+<pre><code>INPUT(-lunwind)
+</code></pre>
+</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ios-setup"><a class="header" href="#ios-setup">iOS setup</a></h1>
 <p>iOS requires some additional Rust targets for cross-compilation:</p>
 <pre><code class="language-bash"># 64 bit targets (real device &amp; simulator):
@@ -833,13 +881,12 @@ to compile its applications.</p>
 <p>First, you will need the following programs, preferably visible from your path:</p>
 <ul>
 <li><a href="https://lib.rs/crates/flutter_rust_bridge_codegen"><code>flutter_rust_bridge_codegen</code></a>, the core codegen for Rust-Dart glue code</li>
-<li><a href="https://lib.rs/crates/cbindgen"><code>cbindgen</code></a>, to generate C headers from Rust FFI code</li>
 <li><a href="https://pub.dev/packages/ffigen"><code>ffigen</code></a>, to generate Dart code from C headers</li>
 <li><a href="https://github.com/casey/just"><code>just</code></a>, a modern command runner alternative to Make</li>
 <li>A working installation of LLVM, see <a href="https://pub.dev/packages/ffigen#installing-llvm">Installing LLVM</a></li>
 </ul>
-<p>An easy way to install the first four dependencies is to run these commands:</p>
-<pre><code class="language-shell">cargo install flutter_rust_bridge_codegen cbindgen just
+<p>An easy way to install the first three dependencies is to run these commands:</p>
+<pre><code class="language-shell">cargo install flutter_rust_bridge_codegen just
 dart pub global activate ffigen
 </code></pre>
 <p>Alternatively, each of these dependencies may provide prebuilt binaries. Check with
@@ -910,27 +957,24 @@ flutter pub add freezed_annotation
 <p>With our new definition of <code>Platform</code> in place, we can rewrite the previous code to make use
 of it! Here is an example of what you can do with freezed enums.</p>
 <p>In <code>lib/main.dart</code>:</p>
-<pre><code class="language-diff"> if (snap.data != null) {
--    final text = const {
--        Platform.Ios: 'iOS',
--        Platform.Windows: 'Windows',
--        Platform.Android: 'Android',
--        Platform.Unix: 'Unix',
--        Platform.MacApple: 'MacOS with Apple Silicon',
--        Platform.MacIntel: 'MacOS',
--        Platform.Wasm: 'the Web'
--    }[snap.data]!;
-+    final text = snap.data!.when(
-+        ios: () =&gt; 'iOS',
-+        windows: () =&gt; 'Windows',
-+        android: () =&gt; 'Android',
-+        unix: () =&gt; 'Unix',
-+        macOs: (arch) =&gt; 'MacOS on $arch',
-+        wasm: () =&gt; 'the Web',
-+        unknown: () =&gt; 'Unknown OS',
-+    );
-     ..
- }
+<pre><code class="language-diff">- final text = const {
+-   Platform.Android: 'Android',
+-   Platform.Ios: 'iOS',
+-   Platform.MacApple: 'MacOS with Apple Silicon',
+-   Platform.MacIntel: 'MacOS',
+-   Platform.Windows: 'Windows',
+-   Platform.Unix: 'Unix',
+-   Platform.Wasm: 'the Web',
+- }[platform] ??
+- 'Unknown OS';
++ final text = platform.when(
++   android: () =&gt; 'Android',
++   ios: () =&gt; 'iOS',
++   macOs: (arch) =&gt; 'MacOS on $arch',
++   windows: () =&gt; 'Windows',
++   unix: () =&gt; 'Unix',
++   wasm: () =&gt; 'the Web',
++ );
 </code></pre>
 <p>In <code>native/src/api.rs</code>:</p>
 <pre><code class="language-diff">     } else if cfg!(target_os = &quot;ios&quot;) {
@@ -988,13 +1032,12 @@ as well.</p>
 <p>These depdencies are required only in build-time:</p>
 <ul>
 <li><a href="https://lib.rs/crates/flutter_rust_bridge_codegen"><code>flutter_rust_bridge_codegen</code></a>, the core codegen for Rust-Dart glue code</li>
-<li><a href="https://lib.rs/crates/cbindgen"><code>cbindgen</code></a>, to generate C headers from Rust FFI code</li>
 <li><a href="https://pub.dev/packages/ffigen"><code>ffigen</code></a>, to generate Dart code from C headers</li>
 <li><a href="https://lib.rs/crates/cargo-xcode"><code>cargo-xcode</code></a>, to generate Xcode projects for iOS and MacOS</li>
 <li>A working installation of LLVM, see <a href="https://pub.dev/packages/ffigen#installing-llvm">Installing LLVM</a></li>
 </ul>
 <p>An easy way to install most of these dependencies is to run:</p>
-<pre><code class="language-bash">cargo install flutter_rust_bridge_codegen cbindgen
+<pre><code class="language-bash">cargo install flutter_rust_bridge_codegen
 dart pub global activate ffigen
 # if building for iOS or MacOS
 cargo install cargo-xcode
@@ -1250,13 +1293,13 @@ file, for example if you use this command instead:</p>
 <p>Unlike the previous tutorial, this one integrates Rust with pure Dart instead of Flutter.</p>
 <h2 id="get-example-code"><a class="header" href="#get-example-code">Get example code</a></h2>
 <p>Please <a href="https://dart.dev/get-dart">install Dart</a>, <a href="https://www.rust-lang.org/learn/get-started">install Rust</a>, and have some familiarity with them. Then run <code>git clone https://github.com/fzyzcjy/flutter_rust_bridge</code>, and my example is in <code>frb_example/pure_dart</code>.</p>
-<h2 id="optional-run-code-generator"><a class="header" href="#optional-run-code-generator">(Optional) Run code generator</a></h2>
-<p>Remark: I have generated the source code already (in quickstart), so this step is optional. Even if you do it, you should not see anything changed.</p>
+<h2 id="optional-manually-run-code-generator"><a class="header" href="#optional-manually-run-code-generator">(Optional) Manually run code generator</a></h2>
+<p>Remark: Bridge is automatically generated upon running <code>cargo build</code> using build-script in build.rs file, so this step is optional. Even if you do it, you should not see anything changed.</p>
 <p>Install it: <code>cargo install flutter_rust_bridge_codegen</code>.</p>
 <p>Run it: <code>flutter_rust_bridge_codegen --rust-input frb_example/pure_dart/rust/src/api.rs --dart-output frb_example/pure_dart/dart/lib/bridge_generated.dart</code> (See <a href="https://github.com/fzyzcjy/flutter_rust_bridge/blob/master/.github/workflows/codegen.yml">CI workflow</a> as a reference.) (For Windows, you may need <code>\\</code> instead of <code>/</code> for paths.)</p>
 <h2 id="run-dartrust-app"><a class="header" href="#run-dartrust-app">Run &quot;Dart+Rust&quot; app</a></h2>
 <p>You may run <code>frb_example/pure_dart/dart/lib/main.dart</code> as a normal Dart program, except that you should provide the dynamic linked library of the Rust code (for simplicity, here I only demonstrate the approach for dynamic linked library, but you can for sure use other methods). The detailed steps are as follows.</p>
-<p>Run <code>cargo build</code> in <code>frb_example/pure_dart/rust</code> to build the Rust code into a <code>.so</code> file. Then run <code>dart frb_example/pure_dart/dart/lib/main.dart frb_example/pure_dart/rust/target/debug/libflutter_rust_bridge_example.so </code> to run the Dart program with Rust <code>.so</code> file. (If you have problems, see &quot;Troubleshooting&quot; section.)  (If on MacOS, Rust may indeed generate <code>.dylib</code>, so change the last command to use <code>...dylib</code> instead of <code>...so</code>,)</p>
+<p>Run <code>cargo build</code> in <code>frb_example/pure_dart/rust</code> to build the Rust code into a <code>.so</code> file. Then run <code>dart frb_example/pure_dart/dart/lib/main.dart frb_example/pure_dart/rust/target/debug/libflutter_rust_bridge_example.so</code> to run the Dart program with Rust <code>.so</code> file. (If you have problems, see &quot;Troubleshooting&quot; section.)  (If on MacOS, Rust may indeed generate <code>.dylib</code>, so change the last command to use <code>...dylib</code> instead of <code>...so</code>,)</p>
 <p>P.S. You will only see some tests passing - no fancy UI or functionality in this example.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="safety-concerns"><a class="header" href="#safety-concerns">Safety concerns</a></h1>
 <p>This library has CI that runs <a href="https://www.valgrind.org/">Valgrind</a> automatically on the setup that a Dart program calls a Rust program using this package, so memory problems should be found by Valgrind. <sub>(Notice that, even when running a simple hello-world Dart program, Valgrind will report hundreds of errors. See <a href="https://github.com/dart-lang/sdk/issues/47346">this Dart lang issue</a> for more details. Therefore, I both look at &quot;definitely lost&quot; in Valgrind, and manually search things related to this library - if all reported errors are unrelated to this library then we are safe.)</sub></p>
